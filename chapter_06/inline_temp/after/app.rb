@@ -6,7 +6,6 @@ class App
   attr_reader :order
 
   def discount?
-    base_price = order.base_price
-    return (base_price > 1000)
+    order.base_price > 1000
   end
 end
