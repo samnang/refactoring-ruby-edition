@@ -9,7 +9,7 @@ class Select
     @options ||= []
   end
 
-  def add_option(arg)
+  def and(arg)
     options << arg
     self
   end
