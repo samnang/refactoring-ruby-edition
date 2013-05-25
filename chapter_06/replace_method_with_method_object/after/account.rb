@@ -7,8 +7,7 @@ class Account
 end
 
 class Gamma
-  attr_reader :account, :input_val, :quantity, :year_to_date,
-              :important_value1, :important_value2, :important_value3
+  attr_reader :account, :input_val, :quantity, :year_to_date
 
   def initialize(account, input_val, quantity, year_to_date)
     @account = account
@@ -18,13 +17,25 @@ class Gamma
   end
 
   def compute
-    important_value1 = (input_val * quantity) + account.delta
-    important_value2 = (input_val * year_to_date) + 100
-    if (year_to_date - important_value1) > 100
-      important_value2 -= 20
-    end
-    important_value3 = important_value2 * 7
-    # and so on.
     important_value3 - 2 * important_value1
+  end
+
+  private
+
+  def important_value1
+    (input_val * quantity) + account.delta
+  end
+
+  def important_value2
+    result = (input_val * year_to_date) + 100
+    if (year_to_date - important_value1) > 100
+      result -= 20
+    end
+
+    result
+  end
+
+  def important_value3
+    important_value2 * 7
   end
 end
