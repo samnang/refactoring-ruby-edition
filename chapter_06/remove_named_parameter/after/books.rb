@@ -1,5 +1,5 @@
 class Books
-  def self.find(hash={})
+  def self.find(selector, hash={})
     hash[:joins] ||= []
     hash[:conditions] ||= ""
 
@@ -10,7 +10,7 @@ class Books
     end
 
     sql << "WHERE #{hash[:conditions]}" unless hash[:conditions].empty?
-    sql << "LIMIT 1" if hash[:selector] == :first
+    sql << "LIMIT 1" if selector == :first
 
     connection.find(sql.join(" "))
   end
