@@ -8,7 +8,7 @@ describe Books do
 
     connection.should_receive(:find).with(sql)
 
-    Books.find(:selector => :all,
+    Books.find(:all,
                :conditions => "authors.name = 'Jenny James'",
                :joins => [:authors])
 
