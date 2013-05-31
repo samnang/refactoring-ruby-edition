@@ -12,6 +12,10 @@ class Recorder
     self
   end
 
+  def record
+    @message_collector ||= MessageCollector.new
+  end
+
   def play_for(obj)
     messages.inject(obj) do |result, message|
       result.send message.first, *message.last
