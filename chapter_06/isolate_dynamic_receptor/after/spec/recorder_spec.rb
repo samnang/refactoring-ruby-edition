@@ -5,8 +5,8 @@ require_relative '../command_center'
 describe Recorder do
   it "replays for recoreded messages" do
     recorder = Recorder.new
-    recorder.start("LRMMMMRL")
-    recorder.stop("LRMMMMRL")
+    recorder.record.start("LRMMMMRL")
+    recorder.record.stop("LRMMMMRL")
 
     output = redirect_stdout do
       recorder.play_for(CommandCenter.new)
