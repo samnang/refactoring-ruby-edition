@@ -1,9 +1,9 @@
 class Account
-  def initialize(interest_rate)
-    @interest_rate = interest_rate
+  def initialize(account_type)
+    @account_type = account_type
   end
 
   def interest_for_amount_days(amount, days)
-    @interest_rate * amount * days / 365
+    @account_type.interest_rate * amount * days / 365
   end
 end
