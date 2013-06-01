@@ -6,6 +6,6 @@ describe Person do
     john = Person.new
     john.department = Department.new("Samnang")
 
-    expect(john.department.manager).to eql("Samnang")
+    expect(john.manager).to eql("Samnang")
   end
 end
