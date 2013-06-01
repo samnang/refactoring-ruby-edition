@@ -7,13 +7,7 @@ class Account
   attr_accessor :account_type, :days_overdrawn
 
   def overdraft_charge
-    if @account_type.premium?
-      result = 10
-      result += (@days_overdrawn - 7) * 0.85 if @days_overdrawn > 7
-      result
-    else
-      @days_overdrawn * 1.75
-    end 
+    @account_type.overdraft_charge(@days_overdrawn)
   end
 
   def bank_charge
