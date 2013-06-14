@@ -1,14 +1,14 @@
 class Order
-  def initialize(customer)
-    @customer = Customer.new(customer)
+  def initialize(customer_name)
+    @customer = Customer.new(customer_name)
   end
   
   def customer
     @customer.name
   end
 
-  def customer=(value)
-    @customer = Customer.new(value)
+  def customer=(customer_name)
+    @customer = Customer.new(customer_name)
   end
 
   def self.number_of_orders_for(orders, customer)
