@@ -9,3 +9,11 @@ class Order
     orders.select{|order| order.customer == customer}.size
   end
 end
+
+class Customer
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+end
