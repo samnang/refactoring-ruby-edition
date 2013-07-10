@@ -1,6 +1,10 @@
 require_relative '../order'
 
 describe Order do
+  before do
+    Customer.load_customers
+  end
+
   it "returns number of orders for customer" do
     customer = "Samnang"
     orders = [
