@@ -1,6 +1,6 @@
 class Order
   def initialize(customer_name)
-    @customer = Customer.new(customer_name)
+    @customer = Customer.create(customer_name)
   end
   
   def customer
@@ -8,7 +8,7 @@ class Order
   end
 
   def customer=(customer_name)
-    @customer = Customer.new(customer_name)
+    @customer = Customer.create(customer_name)
   end
 
   def self.number_of_orders_for(orders, customer)
@@ -21,5 +21,9 @@ class Customer
 
   def initialize(name)
     @name = name
+  end
+
+  def self.create(name)
+    Customer.new(name)
   end
 end
