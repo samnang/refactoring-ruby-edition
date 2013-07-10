@@ -1,21 +1,16 @@
 class Performace
-  def initialize
-    @data = []
-  end
+  attr_accessor :name
+  attr_writer :wins
 
-  def []=(index, value)
-    @data.insert(index, value)
-  end
-
-  def [](index)
-    @data[index]
+  def wins
+    @wins.to_i
   end
 end
 
 row = Performace.new
 
-row[0] = "Liverpool"
-row[1] = "15"
+row.name = "Liverpool"
+row.wins = "15"
 
-name = row[0]
-wins = row[1].to_i
+name = row.name
+wins = row.wins
