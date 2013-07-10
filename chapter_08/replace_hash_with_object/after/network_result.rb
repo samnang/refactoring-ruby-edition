@@ -1,4 +1,17 @@
-new_network = { :nodes => [], :old_networks => [] }
+class NetworkResult
+  def initialize
+    @nodes, @old_networks = [], []
+  end
+
+  def [](attribute)
+    instance_variable_get "@#{attribute}"
+  end
+  def []=(attribute, value)
+    instance_variable_set "@#{attribute}", value
+  end
+end
+
+new_network = NetworkResult.new
 
 new_network[:old_networks] << node.network
 new_network[:nodes] << node
